@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet"> 
+    <style>
+        body{
+            font-family: 'Montserrat', sans-serif;
+            background-color: #EEEEEE;
+        }
+        h1 {
+            color: cornflowerblue;
+        }
+        h2 {
+            color: cadetblue
+        }
+        button {
+            font-weight: bold;
+            font-size: 12px;
+            background-color:dodgerblue;
+            color: white;
+            border: 0;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .card {
+            border-radius: 24px;
+            background: white;
+            margin: 8px;
+            position: relative;
+        }
+        .card h2{
+            padding: 12px;
+        }
+        .card form{
+            padding: 12px;
+        }
+        .card_container {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fill, auto); */
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            place-content: center;
+        }
+        .button_container{
+            padding: 12px;
+        }
+        .button_container button{
+            bottom: 24px;
+            margin-left: 3%;
+            width: 44%;
+        }
+        @media (max-width:640px){
+            .card_container {
+                grid-template-columns: 1fr;
+            }
+            .button_container button{
+                bottom: 20px;
+                width: 44%;
+            }
+        }
+    </style>
+    <title>Platzi - Taller 1: Figuras Geométricas</title>
+</head>
+<body>
+    <header>
+        <h1>Figuras Geométricas</h1>
+    </header>
+    <p>Este es el primer taller del curso práctico de js</p>
+    <div class="card_container">
+        <section class="card">
+            <h2>Calcula area y perimetro de un cuadrado</h2>
+            <form >
+                <label for="ladoCuadrado">¿Cuánto mide el lado del cuadrado?</label>
+                <input id="ladoCuadrado" type="number" />
+            </form>
+            <div class="button_container">
+                <button type="button" onclick="calculaAreaCuadrado()">Calcular Área</button>
+                <button type="button" onclick="calculaPerimetroCuadrado()">Calcular Perímetro</button>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Calcula area y perimetro de un Círculo</h2>
+            <form >
+                <label for="radioCirculo">¿Cuánto mide el radio?</label>
+                <input id="radioCirculo" type="number" />
+            </form>
+            <div class="button_container">
+                <button type="button" onclick="calculaAreaCirculo()">Calcular Área</button>
+                <button type="button" onclick="calculaPerimetroCirculo()"">Calcular Perímetro</button>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Calcula area y perimetro de un Triángulo</h2>
+            <form >
+                <label for="baseTriangulo">¿Cuánto mide la base?</label>
+                <input id="baseTriangulo" type="number" />
+                <label for="lado1Triangulo">¿Cuánto mide el lado 1?</label>
+                <input id="lado1Triangulo" type="number" />
+                <label for="lado2Triangulo">¿Cuánto mide el lado 2?</label>
+                <input id="lado2Triangulo" type="number" />
+                <label for="alturaTriangulo">¿Cuánto mide la altura?</label>
+                <input id="alturaTriangulo" type="number" />
+            </form>
+            <div class="button_container">
+                <button type="button" onclick="calculaAreaTriangulo()">Calcular Área</button>
+                <button type="button" onclick="calculaPerimetroTriangulo()"">Calcular Perímetro</button>
+            </div>
+        </section>
+    </div>
+    <script src="./figuras.js"></script>
+</body>
+</html>
